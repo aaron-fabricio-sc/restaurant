@@ -1,0 +1,54 @@
+@tailwind base;
+/* @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(/fonts/proxima-nova/400-regular.woff) format("woff");
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 500;
+    src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
+  } */
+  
+@tailwind components;
+
+
+.alert{
+  @apply w-64 bg-teal-500 mx-2 my-4 py-4 px-2 rounded-lg border-solid border-2 border-indigo-900;
+}
+.alert:hover{
+  @apply bg-teal-800;
+}
+@screen sm{
+  .alert{
+    @apply w-full
+  }
+}
+
+.alert-danger{
+  @apply w-full mx-2 bg-red-700 my-4 text-white rounded-lg border-red-900 border-solid border-2 py-3 px-4;
+}
+.alert-danger:hover{
+  @apply bg-teal-800;
+}
+
+
+ .link:hover{
+   @apply underline;
+ }
+
+
+
+
+@tailwind utilities;
+
+.rotate-45{
+    transform: rotate(45deg);
+}
+
+@variants hover{
+    .zoom{
+        transform: scale(2)
+    }
+}
+
