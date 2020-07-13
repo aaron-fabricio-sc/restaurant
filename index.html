@@ -5,23 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="public/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
   <title>Dino burguer</title>
 </head>
-<body class="bg-gray-500 ">
-  <header class="bg-secondary flex justify-between items-center px-4 py-2" id="header">
-    <h2 class="text-primary md:text-2xl font-semibold" id="title">
-      <a href="#">DINO BURGER</a>
+<body class="bg-gray-300 ">
+  <header x-data="{ open: false }" class="bg-secondary px-4 py-2 fixed w-full z-10" id="header">
+    <h2 class="text-primary md:text-2xl font-semibold w-1/2 inline-block my-4" id="title">
+      <a href="#">DINO BURGER </a>
     </h2>
-    <div class="text-3xl text-white cursor-pointer p-1" id="menu">
+    <div @click="open = true" class="text-3xl text-white cursor-pointer p-1 w-1/2 inline-block float-right text-right" id="menu">
       &equiv;
     </div>
+  
+    <nav class="bg-secondary px-4"  x-show="open"
+    @click.away="open = false" x-transition:enter="transition ease-linear duration-300"
+    x-transition:enter-start="opacity-0 transform -translate-y-4"
+    x-transition:enter-end="opacity-100 transform translate-y-0"x-transition:leave="transition ease-linear duration-300"
+    x-transition:leave-start="opacity-100 transform translate-y-0"
+    x-transition:leave-end="opacity-0 transform -translate-y-4">
+      <input type="search" name="" id="" placeholder="Buscar..." class="inputs">
+      <div class="flex justify-around">
+        <div class="flex w-1/2 justify-between text-white py-1">
+          <p>$</p>
+          <p class="text-primary">$$</p>
+          <p>$$$</p>
+          <p>$$$$</p>
+        </div>
+        <div class="flex text-primary py-1">
+          <p>&starf;</p>
+          <p>&starf;</p>
+          <p>&starf;</p>
+          <p>&starf;</p>
+          <p>&star;</p>
+        </div>
+        
+
+      </div>
+      <div class="w-full pb-4 flex justify-center ">
+        <button type="submit" class="bg-primary py-1 px-2  rounded-lg block  hover:cursor:pointer">Filtrar</button>
+
+      </div>
+    </nav>
   </header>
-  <main>
+
+  
+  <div>
     <div class="h-50vh md:h-80vh bg-cover bg-no-repeat bg-center" style="background-image: url('https://images.unsplash.com/photo-1569921894261-ecda0b2cc1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=60');">
 
     </div>
+  </div>
+
+  <main>
+
+    <div class=" px-16 md:px-0 container md:flex md:flex-wrap md:justify-center bg-white mx-auto py-12 my-4 " > 
+      <h3 class="text-center w-full text-2xl "> 
+          MENÚ
+      </h3>
+      <div class="w-full h-auto mt-8 md:w-1/3 md:flex bg-transparent md:bg-white rounded-lg mx-auto md:mx-4 my-3 md:shadow-xl ">
+        <div class="h-56 md:h-auto"">
+          <img src="https://images.unsplash.com/photo-1508736793122-f516e3ba5569?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=200" alt="" class="rounded-lg w-full object-cover h-full md:rounded-r-none" >
+        </div>
+        <div class=" relative bg-white rounded-lg shadow-lg -mt-6 md:mt-0 mx-4 md:mx-0 p-2 uppercase md:bg-transparent">
+          <h2 class="mb-2 md:text-sm tracking-tighter font-semibold text-gray-900">Hamburguesa Simple</h2>
+          <p class="mb-2 text-xs text-gray-700 leading-snug">Hamburguesa con tomate, carne, lechuga y adereso de mostaza</p>
+          <p class="mb-2 text-gray-700 font-semibold text-sm">Bol $10</p>
+          <p class="text-yellow-700">&starf;&starf;&starf;&starf;&star;<small>12 comentarios</small></p>
+        </div>
+        
+      </div>
+      <div class="w-full h-auto mt-8 md:w-1/3 md:flex bg-transparent md:bg-white rounded-lg mx-auto md:mx-4 my-3 md:shadow-xl ">
+        <div class="h-56 md:h-auto"">
+          <img src="https://images.unsplash.com/photo-1508736793122-f516e3ba5569?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=200" alt="" class="rounded-lg w-full object-cover h-full md:rounded-r-none" >
+        </div>
+        <div class=" relative bg-white rounded-lg shadow-lg -mt-6 md:mt-0 mx-4 md:mx-0 p-2 uppercase md:bg-transparent">
+          <h2 class="mb-2 md:text-sm tracking-tighter font-semibold text-gray-900">Hamburguesa Simple</h2>
+          <p class="mb-2 text-xs text-gray-700 leading-snug">Hamburguesa con tomate, carne, lechuga y adereso de mostaza</p>
+          <p class="mb-2 text-gray-700 font-semibold text-sm">Bol $10</p>
+          <p class="text-yellow-700">&starf;&starf;&starf;&starf;&star;<small>12 comentarios</small></p>
+        </div>
+        
+      </div>
+      <div class="w-full h-auto mt-8 md:w-1/3 md:flex bg-transparent md:bg-white rounded-lg mx-auto md:mx-4 my-3 md:shadow-xl ">
+        <div class="h-56 md:h-auto"">
+          <img src="https://images.unsplash.com/photo-1508736793122-f516e3ba5569?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=200" alt="" class="rounded-lg w-full object-cover h-full md:rounded-r-none" >
+        </div>
+        <div class=" relative bg-white rounded-lg shadow-lg -mt-6 md:mt-0 mx-4 md:mx-0 p-2 uppercase md:bg-transparent">
+          <h2 class="mb-2 md:text-sm tracking-tighter font-semibold text-gray-900">Hamburguesa Simple</h2>
+          <p class="mb-2 text-xs text-gray-700 leading-snug">Hamburguesa con tomate, carne, lechuga y adereso de mostaza</p>
+          <p class="mb-2 text-gray-700 font-semibold text-sm">Bol $10</p>
+          <p class="text-yellow-700">&starf;&starf;&starf;&starf;&star;<small>12 comentarios</small></p>
+        </div>
+        
+      </div>
+    </div>
   </main>
-  
+  <!-- FORMULARIO -->
+  <section class="container my-8 p-4 mx-auto">
+    <form action="" class="w-full md:w-1/2  md:m-auto py-4 px-12 bg-white rounded-lg">
+      <h3 class="md:text-2xl  text-center">Contáctanos</h3>
+      <div class="py-2 ml-4"> 
+        <label for="nombre" class="block ">Nombre Completo: </label><input type="text" name="name" id="nombre" class="inputs">
+      </div>
+      <div class="py-2 ml-4">
+        <label for="email" class="block ">Correo Electrónico:</label><input type="text" name="name" id="email" class="inputs">
+      </div>
+      <div class="py-2 ml-4">
+        <label for="email" class="block ">Comentarios</label><textarea type="text" name="name" id="email" class="inputs" rows="10" cols="30"></textarea>
+      </div>
+      <input type="submit" value="Enviar" class="py-2 px-6 rounded-lg bg-blue-600 text-white block m-auto hover:bg-blue-900">
+    </form>
+  </section>
+  <!-- //FORMULARIO -->
 
   <footer class="bg-secondary py-4 px-8 text-white flex justify-between ">
     <div class="flex   flex-col">
@@ -32,13 +126,14 @@
     </div>
     <div class=""  >
       <ul class=" text-right">
-        <li><a href="" class="hover:underline">Menú</a></li>
+        <li><a href="" class="hover:underline ">Menú</a></li>
         <li><a href="" class="hover:underline">Sobre nosotros</a></li>
         <li><a href="" class="hover:underline">Políticas de Privacidad</a></li>
         <li><a href="" class="hover:underline">Dirección de Sucursales</a></li>
       </ul>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
  <script src="js/index.js"></script>
 </body>
 </html>
