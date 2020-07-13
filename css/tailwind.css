@@ -37,6 +37,13 @@
    @apply underline;
  }
 
+ .inputs{
+  @apply bg-blue-100 border border-blue-400 rounded-lg block  w-full  px-4 py-1;
+ }
+ .inputs:focus{
+  @apply outline-none shadow-outline;
+ }
+
 
 
 
